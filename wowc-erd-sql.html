@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database documentation</title>
+    <link
+      rel="stylesheet"
+      href="css/styles.css"
+    />
+  </head>
+  <body>
+    <div class="ca">
+      <strong>Database documentation</strong>
+      <h1>World of Warclass ERD</h1>
+    </div>
+    <h2>1. Tabels</h2>
+    <h3>1.1 Tabela characters</h3>
+    <h4>1.1.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>name</td>
+        <td class="bl">VARCHAR(20)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>experience</td>
+        <td class="bl">INT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>gold</td>
+        <td class="bl">INT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>energy</td>
+        <td class="bl">INT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>group_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK, NULL</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>class_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>inscription_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>appearance</td>
+        <td class="bl">JSON</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.2 Tabela characters_events</h3>
+    <h4>1.2.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>event_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>character_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>REFERENCES</td>
+        <td class="bl">char</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.3 Tabela characters_quests</h3>
+    <h4>1.3.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>quest_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>character_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>REFERENCES</td>
+        <td class="bl">char</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.4 Tabela characters_quizzes</h3>
+    <h4>1.4.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>character_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>quiz_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>REFERENCES</td>
+        <td class="bl">char</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.5 Tabela classes</h3>
+    <h4>1.5.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>name</td>
+        <td class="bl">VARCHAR(20)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>health</td>
+        <td class="bl">INT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>energy</td>
+        <td class="bl">INT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.6 Tabela courses</h3>
+    <h4>1.6.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>name</td>
+        <td class="bl">VARCHAR(60)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>description</td>
+        <td class="bl">TEXT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>created_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>updated_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.7 Tabela events</h3>
+    <h4>1.7.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>name</td>
+        <td class="bl">VARCHAR(30)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>description</td>
+        <td class="bl">TEXT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>experience</td>
+        <td class="bl">INT</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>gold</td>
+        <td class="bl">INT</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>health</td>
+        <td class="bl">INT</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>energy</td>
+        <td class="bl">INT</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>created_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>updated_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.8 Tabela groups</h3>
+    <h4>1.8.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>name</td>
+        <td class="bl">VARCHAR(50)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>course_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.9 Tabela inscriptions</h3>
+    <h4>1.9.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>user_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>course_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>created_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>updated_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.10 Tabela institutions</h3>
+    <h4>1.10.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>name</td>
+        <td class="bl">VARCHAR(60)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>email</td>
+        <td class="bl">VARCHAR(320)</td>
+        <td class="bl">AK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>phone_number</td>
+        <td class="bl">INT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>created_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>updated_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.11 Tabela quests</h3>
+    <h4>1.11.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>name</td>
+        <td class="bl">VARCHAR(50)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>description</td>
+        <td class="bl">TEXT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>experience_reward</td>
+        <td class="bl">INT</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>gold_reward</td>
+        <td class="bl">INT</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>course_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>created_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>updated_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.12 Tabela quests_history</h3>
+    <h4>1.12.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>course_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>character_quest_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>sum_experience</td>
+        <td class="bl">INT</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>sum_gold</td>
+        <td class="bl">INT</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>REFERENCES</td>
+        <td class="bl">char</td>
+        <td class="bl">NULL</td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.13 Tabela quizzes</h3>
+    <h4>1.13.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>question</td>
+        <td class="bl">TEXT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>answers</td>
+        <td class="bl">TEXT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.14 Tabela skills</h3>
+    <h4>1.14.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>name</td>
+        <td class="bl">VARCHAR(30)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>description</td>
+        <td class="bl">TEXT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>energy_cost</td>
+        <td class="bl">INT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>required_level</td>
+        <td class="bl">INT</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>class_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.15 Tabela teachers</h3>
+    <h4>1.15.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>user_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>institution_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>created_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>updated_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.16 Tabela teachers_courses</h3>
+    <h4>1.16.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>teacher_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>course_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.17 Tabela teachers_courses_events</h3>
+    <h4>1.17.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>teacher_course_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>event_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.18 Tabela teachers_courses_quests</h3>
+    <h4>1.18.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>teacher_course_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>quest_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.19 Tabela teachers_courses_quizzes</h3>
+    <h4>1.19.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>teacher_course_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>quiz_id</td>
+        <td class="bl">INT</td>
+        <td class="bl">FK</td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h3>1.20 Tabela users</h3>
+    <h4>1.20.1 Columns</h4>
+    <table class="w">
+      <tr class="h">
+        <td>Column name</td>
+        <td class="bl">Type</td>
+        <td class="bl">Properties</td>
+        <td class="bl">Description</td>
+      </tr>
+      <tr class="bt">
+        <td>id</td>
+        <td class="bl">SERIAL</td>
+        <td class="bl">PK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>name</td>
+        <td class="bl">VARCHAR(50)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>paternal_surname</td>
+        <td class="bl">VARCHAR(50)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>maternal_surname</td>
+        <td class="bl">VARCHAR(50)</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>email</td>
+        <td class="bl">VARCHAR(320)</td>
+        <td class="bl">AK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>username</td>
+        <td class="bl">VARCHAR(30)</td>
+        <td class="bl">AK</td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>created_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+      <tr class="bt">
+        <td>updated_at</td>
+        <td class="bl">TIMESTAMP</td>
+        <td class="bl"></td>
+        <td class="bl"></td>
+      </tr>
+    </table>
+    <br />
+    <h2>2. Views</h2>
+    <h2>3. References</h2>
+    <h3>3.1 Reference fk_characters_class_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">classes</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">characters</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">class_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.2 Reference fk_characters_events_character_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">characters</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">characters_events</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">character_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.3 Reference fk_characters_events_event_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">events</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">characters_events</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">event_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.4 Reference fk_characters_group_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">groups</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">characters</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">group_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.5 Reference fk_characters_inscription_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">inscriptions</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">characters</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">inscription_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.6 Reference fk_characters_quests_character_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">characters</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">characters_quests</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">character_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.7 Reference fk_characters_quests_quest_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">quests</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">characters_quests</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">quest_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.8 Reference fk_characters_quizzes_character_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">characters</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">characters_quizzes</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">character_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.9 Reference fk_characters_quizzes_quiz_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">quizzes</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">characters_quizzes</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">quiz_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.10 Reference fk_groups_course_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">courses</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">groups</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">course_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.11 Reference fk_inscriptions_course_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">courses</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">inscriptions</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">course_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.12 Reference fk_inscriptions_user_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">users</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">inscriptions</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">user_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.13 Reference fk_quests_course_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">courses</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">quests</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">course_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.14 Reference fk_quests_history_character_quest_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">characters_quests</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">quests_history</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">character_quest_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.15 Reference fk_quests_history_course_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">courses</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">quests_history</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">course_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.16 Reference fk_skills_class_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">classes</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">skills</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">class_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.17 Reference fk_teachers_courses_course_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">courses</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">teachers_courses</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">course_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.18 Reference fk_teachers_courses_events_event_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">events</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">teachers_courses_events</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">event_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.19 Reference fk_teachers_courses_events_teacher_course_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">teachers_courses</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">teachers_courses_events</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">teacher_course_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.20 Reference fk_teachers_courses_quests_quest_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">quests</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">teachers_courses_quests</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">quest_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.21 Reference fk_teachers_courses_quests_teacher_course_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">teachers_courses</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">teachers_courses_quests</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">teacher_course_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.22 Reference fk_teachers_courses_quizzes_quiz_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">quizzes</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">teachers_courses_quizzes</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">quiz_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.23 Reference fk_teachers_courses_quizzes_teacher_course_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">teachers_courses</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">teachers_courses_quizzes</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">teacher_course_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.24 Reference fk_teachers_courses_teacher_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">teachers</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">teachers_courses</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">teacher_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.25 Reference fk_teachers_institution_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">institutions</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">teachers</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">institution_id</td>
+      </tr>
+    </table>
+    <br />
+    <h3>3.26 Reference fk_teachers_user_id</h3>
+    <table class="w">
+      <tr class="h">
+        <td class="ra" style="width: 45%">users</td>
+        <td class="bl"></td>
+        <td class="bl" style="width: 45%">teachers</td>
+      </tr>
+      <tr class="bt">
+        <td class="ra">id</td>
+        <td class="bl" style="width: 110px; text-align: center">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMjBweCIgdmlld0JveD0iMCAwIDEwMCAyMCIgc3R5bGU9IndpZHRoOjEwMHB4OyI+PGxpbmUgeDE9IjUiIHkxPSIxMCIgeDI9IjgwIiB5Mj0iMTAiIHN0eWxlPSJzdHJva2U6IzBhZjsgc3Ryb2tlLXdpZHRoOjJweDsiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjEwIiByPSI1IiBzdHlsZT0ic3Ryb2tlOiMwYWY7IHN0cm9rZS13aWR0aDoycHg7IGZpbGw6IzBhZjsiIC8+PHRleHQgeD0iODIiIHk9IjgiIHN0eWxlPSJmaWxsOiMwYWY7IGZvbnQtc2l6ZToxMHB4OyBmb250LXdlaWdodDpib2xkOyBmb250LWZhbWlseTptb25vc3BhY2U7Ij5aPC90ZXh0Pjwvc3ZnPg=="
+          />
+        </td>
+        <td class="bl">user_id</td>
+      </tr>
+    </table>
+    <br />
+  </body>
+</html>
