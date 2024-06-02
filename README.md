@@ -1,35 +1,35 @@
 # WoWc - ERD
 
-Este repositorio, además de mostrar nuestro Diagrama Entidad-Relación, está dedicado para los desarrolladores de este proyecto como herramienta para la generación de la documentación del ERD.
+This repository, in addition to displaying our Entity-Relationship Diagram, is dedicated to the developers of this project as a tool for generating the ERD documentation.
 
-## Agradecimientos
+## Acknowledgments
 
-- Agradecemos a [Water.css](https://watercss.kognise.dev/) por proporcionar los estilos CSS utilizados.
-- Agradecemos a [SQLDBD](https://sqldbd.com/) por proporcionar la funcionalidad para generar los diagramas de entidad-relación.
+- We thank [Water.css](https://watercss.kognise.dev/) for providing the CSS styles used.
+- We thank [SQLDBD](https://sqldbd.com/) for providing the functionality to generate entity-relationship diagrams.
 
-## Prerrequisitos
+## Prerequisites
 
-Antes de utilizar esta herramienta, asegúrate de tener instalada la versión de Python indicada por [WeasyPrint](https://github.com/Kozea/WeasyPrint). Puedes seguir los pasos a continuación para instalarlo:
+Before using this tool, make sure you have the version of Python indicated by [WeasyPrint](https://github.com/Kozea/WeasyPrint) installed. You can follow the steps below to install it:
 
-1. Abre una terminal o línea de comandos.
-2. Ejecuta el siguiente comando para verificar si tienes Python instalado:
+1. Open a terminal or command line.
+2. Run the following command to check if you have Python installed:
    ```
    python --version
    ```
-   Si no tienes Python instalado, puedes descargarlo e instalarlo desde el sitio web oficial de Python: [https://www.python.org/downloads/](https://www.python.org/downloads/).
+   If you do not have Python installed, you can download and install it from the official Python website: [https://www.python.org/downloads/](https://www.python.org/downloads/).
 
-## Instalación
+## Installation
 
-1. Clona este repositorio en tu máquina local.
-2. Abre el archivo `index.html` en tu navegador web.
+1. Clone this repository to your local machine.
+2. Open the `index.html` file in your web browser.
 
-## Uso
+## Usage
 
-1. Si deseas exportar el html a pdf, ejecuta el siguiente comando:
+1. If you want to export the HTML to PDF, run the following command:
    ```
    python export.py
    ```
 
-## Licencia
+## License
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
